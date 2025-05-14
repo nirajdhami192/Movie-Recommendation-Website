@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieFlix - Discover Movies & TV Shows</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>MovieFlix</h1>
+        <p class="tagline">Discover your next favorite movie or TV show</p>
+    </header>
+
+    <main>
+        <section id="search">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search for movies, TV shows...">
+                <button id="searchButton">
+                    <i class="fas fa-search"></i> Search
+                </button>
+            </div>
+
+            <div class="filter-container">
+                <div class="filter-group">
+                    <label for="type">Type</label>
+                    <select id="type">
+                        <option value="">All</option>
+                        <option value="movie">Movies</option>
+                        <option value="tv">TV Shows</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="yearFrom">From Year</label>
+                    <input type="number" id="yearFrom" min="1900" max="2025">
+                </div>
+
+                <div class="filter-group">
+                    <label for="yearTo">To Year</label>
+                    <input type="number" id="yearTo" min="1900" max="2025">
+                </div>
+
+                <div class="filter-group">
+                    <label for="minRating">Min Rating</label>
+                    <select id="minRating">
+                        <option value="">Any</option>
+                        <option value="8">8+</option>
+                        <option value="7">7+</option>
+                        <option value="6">6+</option>
+                        <option value="5">5+</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="genre-categories">
+                <button class="genre-btn active" data-genre="28">Action</button>
+                <button class="genre-btn" data-genre="12">Adventure</button>
+                <button class="genre-btn" data-genre="16">Animation</button>
+                <button class="genre-btn" data-genre="35">Comedy</button>
+                <button class="genre-btn" data-genre="80">Crime</button>
+                <button class="genre-btn" data-genre="18">Drama</button>
+                <button class="genre-btn" data-genre="10751">Family</button>
+                <button class="genre-btn" data-genre="14">Fantasy</button>
+                <button class="genre-btn" data-genre="27">Horror</button>
+                <button class="genre-btn" data-genre="10749">Romance</button>
+                <button class="genre-btn" data-genre="878">Sci-Fi</button>
+                <button class="genre-btn" data-genre="53">Thriller</button>
+            </div>
+        </section>
+
+        <section id="results">
+            <div class="section-header">
+                <h2 id="resultsTitle">Latest Movies</h2>
+                <button id="homeButton" class="home-btn">
+                    <i class="fas fa-home"></i> Home
+                </button>
+            </div>
+
+            <div id="moviesList" class="movies-grid"></div>
+
+            <div class="pagination">
+                <button id="prevPage" disabled>
+                    <i class="fas fa-chevron-left"></i> Previous
+                </button>
+                <span id="pageInfo">Page 1 of 1</span>
+                <button id="nextPage" disabled>
+                    Next <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+    </main>
+
+
+    <div id="trailerModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="video-container">
+                <iframe id="trailerVideo" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
